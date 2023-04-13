@@ -1,0 +1,42 @@
+ PRATICA 1
+
+ Imagine o seguinte cenario:
+
+ queremos desenvolver um aplicativo de redes sociais. Na fase desesenvolvimento surge a seguinte duvida 
+
+ Como voce estruturaria  a logica de follow entre os users?
+ seria uma relação 1:1, 1:m ou m:n?
+
+ criando a tabela referenciada 
+
+ NEsse cenario, a tabela users é suficiente para ser a referencia da relação m:n entre seguidores e seguidos (followers e followed)
+
+ tabel users: id pk text, name text, email text, password text, created_at text ;
+  popule-a com ple menos 3 pessoas.
+  
+___________________________________________
+
+PRATICA 2
+criaremos a tabela de relações, nela teremos dois tipos de usuraios:
+- followers que são as pessoas que seguem outras
+- followed que sao as pessoas que estao sendo seguidas 
+
+table follows: follower_id (FK) text; followed_id(FK) text
+
+* lembre-se que essas colunas nao podem ser unicas para que a junção seja m:n
+
+sabendo que a tabela possui 3 pessoas (A,B e C), popule a tabela follows respeitando os seguintes requisitos:
+-Pessoa A segue B e C;
+-Pessoa B segue A;
+-Pessoa C nao segue ninguem
+
+faça uma consulta com junção INNER jOIN entre as duas tabelas (follows.follower_id = users.id)
+_________________________________________________
+pratica 3 
+
+na query de junção da pratic anaterior, o ususario C  não apareced no resultado
+cire um ajunção que possibilitada a vbizualização das pessoas que não seguem ninguem . o resultado tambem deve continuar incluindo as pessoas uqe seguem outras , ou seja, a intersecção
+
+FIXAÇÃO
+
+implemente ma relação m:n
